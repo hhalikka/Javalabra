@@ -1,0 +1,4 @@
+Tuntikirjanpito
+
+ti 12.3
+n 1,5 : aihemäärittelyn kirjoitus, git-toiminnot(rekisteröinti, opettelu jne), netbeans projenktin luonti

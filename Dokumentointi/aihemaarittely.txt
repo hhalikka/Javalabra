@@ -1,0 +1,18 @@
+Aihemäärittely
+
+Aihe : Miinaharava
+
+Toteutetaan klassinen, yhden pelaajan Miinaharava. Pelissä on ruutuja, joissa osa on miinoja.
+Pelaaja avaa ruudun sitä klikaamalla, ja mikäli ruutu on miina, peli loppuu. Klikattaessa miinatonta 
+ruutua, se ilmoittaa, moniko sitä ympyröivistä ruuduista sisältää miinan. Mikäli ruutua ei ympyröi 
+yksikään miina, sen avaaminen automaattisesti avaa ne ruudut sen ympäriltä, joiden ympärillä ei ole 
+miinaa. Pelaaja voi merkitä ruudun, jonka tietää sisältävän miinan. Merkittyä ruutua ei voi avata, 
+ellei merkintää poisteta. Kun kaikki miinattomat ruudut on avattu, peli loppuu ja pelaaja on voittanut.
+
+Käyttäjät: Pelaaja
+
+Pelaajan toiminnot: 
+	Pelin aloittaminen
+	Ruutujen avaaminen
+	Ruutujen merkitseminen
+	Pelin lopettaminen
