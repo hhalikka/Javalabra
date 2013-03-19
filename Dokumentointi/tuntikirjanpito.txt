@@ -1,4 +1,19 @@
 Tuntikirjanpito
 
 ti 12.3
-n 1,5 : aihemäärittelyn kirjoitus, git-toiminnot(rekisteröinti, opettelu jne), netbeans projenktin luonti
+n 1,5t : aihemäärittelyn kirjoitus, git-toiminnot(rekisteröinti, opettelu jne), netbeans projenktin luonti
+
+to 14.3
+n 1t : luokkakaavoin aloitus, muu suunnittelu
+n 1t : esitietojen kertausta
+n 1,5t : koodin kirjoitusta
+
+la 16.3
+n 1t : koodin kirjoitusta
+n 1t : esitietojen kertausta
+
+ma 18.3
+n 1t : koodin & testien kirjoitusta, luokkakaavion viimeistelyä
+
+ti 19.3
+n 2t : testien kirjoitusta & koodin korjausta
