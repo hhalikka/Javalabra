@@ -18,6 +18,11 @@ public class Peli {
     public void aloitaPeli() {
         this.pelilauta.lisaaRuudut();
         this.pelilauta.miinoita();
+        this.pelilauta.lisaaYmpyroivat();
+    }
+    
+    public void lopetaPeli() {
+        //ei tehdä mitään vielä
     }
     
 }

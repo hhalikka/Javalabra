@@ -24,8 +24,19 @@ public class Pelilauta {
             this.ruudut.add(new Ruutu(ruudunPaikka));
         }}
     }
-   
     
+    public void lisaaYmpyroivat() {
+        for(Ruutu ruutu : this.ruudut) {
+            Sijainti ruudunSijainti = ruutu.getSijainti();
+            for(Ruutu ympyroivaRuutu : this.ruudut) {
+                Sijainti toisenSijainti = ruutu.getSijainti();
+                if(ruudunSijainti.onYmpyroiva(toisenSijainti)) {
+                    ruutu.lisaaYmpyroiva(ympyroivaRuutu);
+                }
+            }
+        }
+    }
+   
     public void miinoita() {
         int miinoja=40;
         Random miinoittaja=new Random();
