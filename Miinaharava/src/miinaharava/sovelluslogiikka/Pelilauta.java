@@ -17,14 +17,25 @@ public class Pelilauta {
     public Pelilauta() {
         this.ruudut=new ArrayList<Ruutu>();
     }
+    /**
+    * Metodi luo ja lisää pelilautaan ruudut.   
+    *
+    */
     public void lisaaRuudut() {
         for (int leveys=1; leveys<17; leveys++) { 
             for(int korkeus=1; korkeus<17; korkeus++) {
-            Sijainti ruudunPaikka = new Sijainti(leveys, korkeus);
-            this.ruudut.add(new Ruutu(ruudunPaikka));
+                Sijainti ruudunPaikka = new Sijainti(leveys, korkeus);
+                this.ruudut.add(new Ruutu(ruudunPaikka));
         }}
     }
-    
+    /**
+    * Metodi lisää pelilaudan jokaiselle ruudulle sen ympyröivien ruutujen
+    * listaan ne pelilaudan ruudut, jotka sijaitsevat sen ympärillä.
+    *
+    * @see miinaharava.sovelluslogiikka.Ruutu#lisaaYmpyroiva(miinaharava.sovelluslogiikka.Ruutu) 
+    * @see miinaharava.sovelluslogiikka.Sijainti#onYmpyroiva(miinaharava.sovelluslogiikka.Sijainti) 
+    *
+    */
     public void lisaaYmpyroivat() {
         for(Ruutu ruutu : this.ruudut) {
             Sijainti ruudunSijainti = ruutu.getSijainti();
@@ -36,7 +47,12 @@ public class Pelilauta {
             }
         }
     }
-   
+    /**
+    * Metodi lisää pelilautaan miinat, 40 kappaletta, arpojan avulla.
+    *
+    * @see miinaharava.sovelluslogiikka.Ruutu#miinaksi()   
+    * 
+    */
     public void miinoita() {
         int miinoja=40;
         Random miinoittaja=new Random();

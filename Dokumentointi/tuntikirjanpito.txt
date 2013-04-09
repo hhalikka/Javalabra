@@ -17,3 +17,21 @@ n 1t : koodin & testien kirjoitusta, luokkakaavion viimeistelyä
 
 ti 19.3
 n 2t : testien kirjoitusta & koodin korjausta
+
+to 21.3
+n 1t : testien & koodin kirjoitusta
+
+la 23.3
+n 1t : esitietojen kertausta
+
+ti 26.3
+n 0,5t : koodin kirjoitusta
+
+ma 1.4
+n 0,5t : esitietojen kertausta
+
+pe 5.4
+n 1t : javadoc-dokumentoinnin opettelua & aloitus
+
+su 7.4
+n 1t : koodin pientä hienosäätöä ja javadocin kirjoitusta
