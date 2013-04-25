@@ -5,14 +5,17 @@
 package miinaharava.sovelluslogiikka;
 
 /**
- *
+ *Luo uuden pelin, ja sen pelilaudan. Pitää kirjaa pelin tilasta.
+ * 
  * @author Heidi
  */
 public class Peli {
     private Pelilauta pelilauta;
+    private boolean peliKaynnissa;
     
     public Peli() {
         this.pelilauta=new Pelilauta();
+        this.peliKaynnissa=true;
     }
     /**
     *Metodi aloittaa pelin kutsumalla sen pelilaudan metodeja lisaaRuudut,
@@ -32,7 +35,11 @@ public class Peli {
     *
     */
     public void lopetaPeli() {
-        //ei tehdä mitään vielä
+        this.peliKaynnissa=false;
+    }
+    
+    public Pelilauta getLauta() {
+        return this.pelilauta;
     }
     
 }

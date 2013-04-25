@@ -5,7 +5,7 @@
 package miinaharava.sovelluslogiikka;
 
 /**
- *
+ * Yhden ruudun sijainnin pelilaudalla tallettava olio,
  * @author Heidi
  */
 public class Sijainti {
@@ -60,12 +60,16 @@ public class Sijainti {
     */
     public boolean onYmpyroiva(Sijainti kasiteltava) {
         if(this.samaPaikka(kasiteltava)) {
-            return false;
-        }
+            return false; }
         if(this.korkeusEtaisyys(kasiteltava)>1 || this.leveysEtaisyys(kasiteltava)>1) {
-            return false;
-        }
+            return false; }
         return true;
+    }
+    public int getKorkeus() {
+        return this.korkeusSijainti;
+    }
+    public int getLeveys() {
+        return this.leveysSijainti;
     }
         
    

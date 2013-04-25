@@ -8,26 +8,29 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
+ *Pelin pelilauta, joka sisältää pelin ruudut.
+ * 
  * @author Heidi
  */
 public class Pelilauta {
     private ArrayList<Ruutu> ruudut;
+    private boolean peliKaynnissa;
+    private ArrayList<Ruutu> miinat;
     
     public Pelilauta() {
         this.ruudut=new ArrayList<Ruutu>();
+        this.peliKaynnissa=true;
+        this.miinat=new ArrayList<Ruutu>();
     }
     /**
     * Metodi luo ja lisää pelilautaan ruudut.   
     *
     */
     public void lisaaRuudut() {
-        for (int leveys=1; leveys<17; leveys++) { 
-            for(int korkeus=1; korkeus<17; korkeus++) {
+        for (int leveys=1; leveys<10; leveys++) { 
+            for(int korkeus=1; korkeus<10; korkeus++) {
                 Sijainti ruudunPaikka = new Sijainti(leveys, korkeus);
-                this.ruudut.add(new Ruutu(ruudunPaikka));
-        }}
-    }
+                this.ruudut.add(new Ruutu(ruudunPaikka)); }}}
     /**
     * Metodi lisää pelilaudan jokaiselle ruudulle sen ympyröivien ruutujen
     * listaan ne pelilaudan ruudut, jotka sijaitsevat sen ympärillä.
@@ -40,13 +43,9 @@ public class Pelilauta {
         for(Ruutu ruutu : this.ruudut) {
             Sijainti ruudunSijainti = ruutu.getSijainti();
             for(Ruutu ympyroivaRuutu : this.ruudut) {
-                Sijainti toisenSijainti = ruutu.getSijainti();
+                Sijainti toisenSijainti = ympyroivaRuutu.getSijainti();
                 if(ruudunSijainti.onYmpyroiva(toisenSijainti)) {
-                    ruutu.lisaaYmpyroiva(ympyroivaRuutu);
-                }
-            }
-        }
-    }
+                    ruutu.lisaaYmpyroiva(ympyroivaRuutu); }}}}
     /**
     * Metodi lisää pelilautaan miinat, 40 kappaletta, arpojan avulla.
     *
@@ -54,18 +53,35 @@ public class Pelilauta {
     * 
     */
     public void miinoita() {
-        int miinoja=40;
+        int miinoja=10;
         Random miinoittaja=new Random();
         int miinojenLukumaara=0;
-        while(miinojenLukumaara!=40) {
+        while(true) {
+            if(miinojenLukumaara==10) {
+                        break; }
             for (Ruutu ruutu : this.ruudut) {
-                int i=miinoittaja.nextInt(256)+1;
-                if(i<=40&&miinojenLukumaara<40) {
+                int i=miinoittaja.nextInt(81)+1;
+                if(i<=10&&miinojenLukumaara<10) {
                     ruutu.miinaksi();
+                    this.miinat.add(ruutu);
                     miinojenLukumaara++;
             } }
         }
     }
+    public boolean miinaaPainettu() {
+        for(Ruutu miina:this.miinat) {
+            if(miina.avattu()) {
+                this.peliKaynnissa=false;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean peliKaynnissa() {
+        return this.peliKaynnissa;
+    }
+    
     public ArrayList<Ruutu> getRuudut() {
         return this.ruudut;
     }

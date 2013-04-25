@@ -44,7 +44,7 @@ public class PelilautaTest {
     public void ruutujaOikeaMaara() {
         Pelilauta pelilauta = new Pelilauta();
         pelilauta.lisaaRuudut();
-        assertEquals(pelilauta.getRuudut().size(), 256);
+        assertEquals(pelilauta.getRuudut().size(), 81);
     }
     @Test
     public void miinojaNeljakymmenta() {
@@ -57,6 +57,6 @@ public class PelilautaTest {
                 i++;
             }
         }
-        assertEquals(i, 40);
+        assertEquals(i, 10);
     }
 }

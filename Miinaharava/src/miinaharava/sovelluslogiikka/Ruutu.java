@@ -7,7 +7,10 @@ package miinaharava.sovelluslogiikka;
 import java.util.ArrayList;
 
 /**
- *
+ *Pelin yksi ruutu, jolla on sijainti, ympyröivät ruudut, sekä tieto siitä,
+ * onko ruutu miina, onko se merkitty, onko se avattu ja moniko miina sitä
+ * ympyröi.
+ * 
  * @author Heidi
  */
 public class Ruutu {
@@ -41,35 +44,17 @@ public class Ruutu {
         this.ympyroivatRuudut.add(ruutu);
     }
     /**
-    * Metodi avaa ruudun, mikäli se ei ole avattu vielä,
-    * ja tarkistaa sitä ympyröivien miinojen määrän. Mikäli
-    * määrä on nolla, metodi kutsuu metodia avaaYmpyröivät
+    * Metodi avaa ruudun, mikäli se ei ole avattu vielä.
     *
     */
-    
     public void avaa() {
         if(!this.onMiina&&!this.merkitty) {
             this.avattu=true;
-            if(this.miinojenMaara()==0) {
-                this.avaaYmpyroivat();
-        } } else if(this.onMiina) {
+        } else if(this.onMiina) {
             //peli lopetetaan!
         } else {
             //merkitty, ei tehdä mitään
         }
-    }
-    /**
-    * Metodi avaa ruutua ympyröivistä ruuduista ne, jotka eivät sisällä miinaa.
-    *
-    * @see miinaharava.sovelluslogiikka.Ruutu#avaa() 
-    */
-    
-    public void avaaYmpyroivat() {
-       for (Ruutu ruutu : this.ympyroivatRuudut) {
-           if(!ruutu.onMiina) {
-               ruutu.avaa();
-           }
-       } 
     }
     /**
     * Metodi merkitsee merkitsemättömän ruudun, ja poistaa merkinnän
@@ -122,15 +107,18 @@ public class Ruutu {
     public boolean avattu() {
         return this.avattu;
     }
-    
-    public Sijainti getSijainti() {
-        return this.sijainti;
-    }
     /**
     * Tekee ruudusta miinan, eli muuttaa sen onMiina-arvon true:ksi.  
     * 
     */
     public void miinaksi() {
         this.onMiina=true;
+    }
+    
+    public ArrayList<Ruutu> getYmpyroivat() {
+        return this.ympyroivatRuudut;
+    }
+    public Sijainti getSijainti() {
+        return this.sijainti;
     }
 }

@@ -70,14 +70,7 @@ public class RuutuTest {
         ruutu.avaa();
         assertEquals(ruutu.avattu(), false);
     }
-    @Test
-    public void ympyroivaRuutuAvautuu() {
-        Ruutu ruutuYksi = new Ruutu();
-        Ruutu ruutuKaksi = new Ruutu();
-        ruutuYksi.lisaaYmpyroiva(ruutuKaksi);
-        ruutuYksi.avaa();
-        assertEquals(ruutuKaksi.avattu(), true);
-    }
+   
     @Test
     public void miinojaEiOle() {
         Ruutu ruutu = new Ruutu();
