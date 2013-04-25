@@ -35,3 +35,24 @@ n 1t : javadoc-dokumentoinnin opettelua & aloitus
 
 su 7.4
 n 1t : koodin pientä hienosäätöä ja javadocin kirjoitusta
+
+ti 9.4
+n 1t : esitietojen kertausta
+
+ma 15.4
+n 1t : koodin "päivitystä" (pieniä muutoksia)
+
+to 18.4
+n 1t : esitietojen&netistä muiden tietojen etsimistä ja lukemista
+
+la 20.4
+n 2t : koodausta(käyttöliittymä pääosin)
+
+su 21.4
+n 2t : esitietojen kertusta ja netistä tietojen lukua
+
+ma 22.4
+n 2t : muutoksia koodiin ja testeihin, koodin kirjoitusta, virheiden korjailua
+
+ke 24.4
+n 2t : pieniä muutoksia ohjelmaan, koodausta, käyttöliittymän viimeistelyä
