@@ -20,7 +20,7 @@ public class Miinaharava {
     public static void main(String[] args) {
         Peli uusiPeli = new Peli();
         uusiPeli.aloitaPeli();
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(uusiPeli.getLauta());
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(uusiPeli);
         SwingUtilities.invokeLater(kayttoliittyma);
     }
 }

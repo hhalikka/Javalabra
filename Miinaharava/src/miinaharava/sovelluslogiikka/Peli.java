@@ -38,6 +38,10 @@ public class Peli {
         this.peliKaynnissa=false;
     }
     
+    public boolean peliKaynnissa() {
+        return this.peliKaynnissa;
+    }
+    
     public Pelilauta getLauta() {
         return this.pelilauta;
     }

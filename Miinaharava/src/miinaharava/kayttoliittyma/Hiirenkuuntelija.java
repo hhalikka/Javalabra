@@ -15,19 +15,22 @@ import miinaharava.sovelluslogiikka.Ruutu;
  */
 public class Hiirenkuuntelija implements MouseListener {
     private Nappi nappi;
+    private Kayttoliittyma kayttoliittyma;
     
-    public Hiirenkuuntelija(Nappi nappi) {
+    public Hiirenkuuntelija(Nappi nappi, Kayttoliittyma kayttoliittyma) {
+        this.kayttoliittyma=kayttoliittyma;
         this.nappi=nappi;
     }
 
     @Override
     public void mouseClicked(MouseEvent me) {
-        if(me.getButton()==MouseEvent.BUTTON3) {
-            merkitse();
-        } else {
-            if(!this.nappi.getRuutu().merkitty()&&!this.nappi.getRuutu().avattu()) {
-              avaaRuutu();  
-        }}}
+        if(this.kayttoliittyma.peliKaynnissa()){
+            if(me.getButton()==MouseEvent.BUTTON3) {
+                merkitse();
+            } else {
+                 if(!this.nappi.getRuutu().merkitty()&&!this.nappi.getRuutu().avattu()) {
+                    avaaRuutu();  
+        }}}}
  /**
  * Metodi avaa ruudun, jota on painettu hiirellä.
  * 
@@ -36,7 +39,9 @@ public class Hiirenkuuntelija implements MouseListener {
  */
     public void avaaRuutu() {
         this.nappi.avaaRuutu();
-    }
+        if(this.nappi.onkoRuutuMiina()) {
+            this.kayttoliittyma.lopetaPeli();
+        }}
  /**
  * Metodi merkitsee ruudun.
  *

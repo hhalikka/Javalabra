@@ -14,12 +14,10 @@ import java.util.Random;
  */
 public class Pelilauta {
     private ArrayList<Ruutu> ruudut;
-    private boolean peliKaynnissa;
     private ArrayList<Ruutu> miinat;
     
     public Pelilauta() {
         this.ruudut=new ArrayList<Ruutu>();
-        this.peliKaynnissa=true;
         this.miinat=new ArrayList<Ruutu>();
     }
     /**
@@ -67,19 +65,6 @@ public class Pelilauta {
                     miinojenLukumaara++;
             } }
         }
-    }
-    public boolean miinaaPainettu() {
-        for(Ruutu miina:this.miinat) {
-            if(miina.avattu()) {
-                this.peliKaynnissa=false;
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    public boolean peliKaynnissa() {
-        return this.peliKaynnissa;
     }
     
     public ArrayList<Ruutu> getRuudut() {

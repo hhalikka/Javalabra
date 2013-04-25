@@ -44,14 +44,12 @@ public class Ruutu {
         this.ympyroivatRuudut.add(ruutu);
     }
     /**
-    * Metodi avaa ruudun, mikäli se ei ole avattu vielä.
+    * Metodi avaa ruudun, mikäli se ei ole avattu vielä, eikä merkitty.
     *
     */
     public void avaa() {
-        if(!this.onMiina&&!this.merkitty) {
+        if(!this.onMiina&&!this.merkitty&&!this.avattu) {
             this.avattu=true;
-        } else if(this.onMiina) {
-            //peli lopetetaan!
         } else {
             //merkitty, ei tehdä mitään
         }
