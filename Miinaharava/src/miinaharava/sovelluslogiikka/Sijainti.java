@@ -5,11 +5,19 @@
 package miinaharava.sovelluslogiikka;
 
 /**
- * Yhden ruudun sijainnin pelilaudalla tallettava olio,
+ * Yhden ruudun sijainnin pelilaudalla tallettava olio.
  * @author Heidi
  */
 public class Sijainti {
+    /**
+    * Sijainti leveydellä.
+    *
+    */
     private int leveysSijainti;
+    /**
+    * Sijainti korkeudella.
+    *
+    */
     private int korkeusSijainti;
     
     public Sijainti(int leveys, int korkeus) {

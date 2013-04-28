@@ -1,0 +1,14 @@
+Miinaharava - Käyttöohje
+
+Peli sisältää ruutuja, joista osa on tyhjiä, osa sisältää miinan. Ruutuja avataan hiiren vasenta painiketta 
+painamalla, ja yritetään olla avaamatta ruutua, joka sisältää miinan. Kun avataan ruutu, joka ei sisällä
+miinaa, ruudusta paljastuu numero. Numero kertoo, montako miinaa ruudun ympärillä (sitä koskettavissa ruuduissa) 
+yhteensä on. Mikäli ruutua ei ympyröi yksikään miina, myös kaikki sitä ympyröivät ruudut avautuvat automaattisesti.
+Numerojen avulla voi päätellä, mitkä ruudut sisältävät miinan, ja sen avulla sen, mitkä ruudut ovat tyhjiä. 
+Tiedettäessä, että jokin ruutu sisältää miinan, ruudun voi merkitä. Merkintä lisätään painamalla ruutua hiiren 
+oikealla painikkeella. Tällöin ruutu on merkitty ("?"), eikä sitä voi avata vasemmalla hiirennäppäimellä. 
+Merkintä myös poistetaan oikealla hiirennäppäimellä.
+Kun jokainen ruutu, lukuunottamatta niitä, joissa on miina, on avattu, peli on voitettu. Mikäli avaa yhdenkään 
+miinan sisältävän ruudun, peli on hävitty. Ylälaidassa on tieto siitä, onko peli käynnissä, hävitty vai voitettu, 
+sekä siitä, montako miinaa on löydetty. Miina katsotaan löydetyksi, kun sen sisältävä ruutu on merkitty.
+Pelissä on 81 ruutua (9x9 ruudukko), ja näistä kymmenen ruutua sisältää miinan.

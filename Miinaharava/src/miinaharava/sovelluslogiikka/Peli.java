@@ -10,7 +10,15 @@ package miinaharava.sovelluslogiikka;
  * @author Heidi
  */
 public class Peli {
+    /**
+    * Pelin pelilauta, joka sisältää ruudut.
+    *
+    */
     private Pelilauta pelilauta;
+    /**
+    * Kertoo, onko peli käynnissä vai loppunut.
+    *
+    */
     private boolean peliKaynnissa;
     
     public Peli() {
@@ -28,6 +36,7 @@ public class Peli {
     public void aloitaPeli() {
         this.pelilauta.lisaaRuudut();
         this.pelilauta.miinoita();
+        this.pelilauta.lisaaMiinattomat();
         this.pelilauta.lisaaYmpyroivat();
     }
     /**
@@ -38,8 +47,40 @@ public class Peli {
         this.peliKaynnissa=false;
     }
     
+    /**
+    * Kertoo, onko peli käynnissä vai loppunut.
+    * 
+    * @return true, mikäli peli on käynnissä, false, mikäli se on loppunut.
+    *
+    */
     public boolean peliKaynnissa() {
         return this.peliKaynnissa;
+    }
+    
+    /**
+    * Metodi tarkistaa onko jokainen miinaton ruutu avattu, eli onko peli 
+    * voitettu.
+    * 
+    * @return true, mikäli peli on voitettu, muuten false.
+    *
+    */
+    public boolean voitettu() {
+        for(Ruutu ruutu:this.pelilauta.getMiinattomat()) {
+            if(!ruutu.avattu()) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
+    * Kertoo montako miinaa on vielä löytämättä.
+    * 
+    * @return jäljelläolevien miinojen määrä
+    *
+    */
+    public int miinojaJaljella() {
+        return this.pelilauta.miinojaJaljella();
     }
     
     public Pelilauta getLauta() {

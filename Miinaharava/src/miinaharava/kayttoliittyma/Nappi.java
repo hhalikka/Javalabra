@@ -15,9 +15,25 @@ import miinaharava.sovelluslogiikka.Sijainti;
  * @author Heidi
  */
 public class Nappi {
+    /**
+    * Napin sijainti pelilaudalla.
+    *
+    */
     private Sijainti sijainti;
+    /**
+    * Napin JButton.
+    *
+    */
     private JButton button;
+    /**
+    * Napin ruutu.
+    *
+    */
     private Ruutu ruutu;
+    /**
+    * Lista niistä pelilaudan napeista, jotka ympyröivät nappia.
+    *
+    */
     private ArrayList<Nappi> ympyroivatNapit;
    
     public Nappi(JButton button, Ruutu ruutu) {
@@ -31,6 +47,7 @@ public class Nappi {
  * tekstiksi tiedon siitä, montako miinaa ruutua ympyröi. Mikäli ruutu
  * on miina, peli lopetetaan.
  *
+ * @see miinaharava.kayttoliittyma.Nappi#asetaTeksti() 
  */
     public void avaaRuutu() {
         if(!this.ruutu.avattu()) {
@@ -65,6 +82,12 @@ public class Nappi {
     public boolean onkoRuutuMerkitty() {
         return this.ruutu.merkitty();
     }
+    
+    /**
+    * Asettaa ruudun tekstiksi tiedon siitä, moniko miina sitä ympyröi,
+    * tai merkin siitä, että ruutu on miina.
+    *
+    */
     public void asetaTeksti() {
         Ruutu ruutu=this.ruutu;
         if(ruutu.onMiina()) {
@@ -84,6 +107,12 @@ public class Nappi {
         return this.ruutu.onMiina();
     }
     
+    /**
+    * Lisää parametrina olevan napin käsiteltävän napin ympyröivien 
+    * listaan.
+    *
+    * @param Nappi lisattava
+    */
     public void lisaaYmpyroivaksi(Nappi lisattava) {
         this.ympyroivatNapit.add(lisattava);
     }

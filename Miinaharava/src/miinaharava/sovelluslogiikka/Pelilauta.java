@@ -13,12 +13,26 @@ import java.util.Random;
  * @author Heidi
  */
 public class Pelilauta {
+    /**
+    * Lista kaikista pelilaudan ruuduista.
+    *
+    */
     private ArrayList<Ruutu> ruudut;
+    /**
+    * Lista niistä pelilaudan ruuduista, jotka sisältävät miinan.
+    *
+    */
     private ArrayList<Ruutu> miinat;
+    /**
+    * Lista niistä pelilaudan ruuduista, jotka eivät sisällä miinaa.
+    *
+    */
+    private ArrayList<Ruutu> miinattomatRuudut;
     
     public Pelilauta() {
         this.ruudut=new ArrayList<Ruutu>();
         this.miinat=new ArrayList<Ruutu>();
+        this.miinattomatRuudut=new ArrayList<Ruutu>();
     }
     /**
     * Metodi luo ja lisää pelilautaan ruudut.   
@@ -65,6 +79,37 @@ public class Pelilauta {
                     miinojenLukumaara++;
             } }
         }
+    }
+    /**
+    *Metodi kertoo montako miinaa on vielä löytämättä(merkitsemättä).
+    * 
+    * @return jäljellä olevien miinojen määrä.
+    *
+    */
+    public int miinojaJaljella() {
+        int miinojaJaljella=this.miinat.size();
+        for(Ruutu miina:this.miinat) {
+            if(miina.merkitty()) {
+                miinojaJaljella--;
+            }
+        }
+        return miinojaJaljella;
+    }
+    
+    /**
+    * Lisää Pelilaudan miinattomatRuudut-listaan kaikki miinattomat ruudut.
+    *
+    */
+    public void lisaaMiinattomat() {
+        for(Ruutu ruutu : this.ruudut) {
+            if(!ruutu.onMiina()) {
+                this.miinattomatRuudut.add(ruutu);
+            }
+        }
+    }
+    
+    public ArrayList<Ruutu> getMiinattomat() {
+        return this.miinattomatRuudut;
     }
     
     public ArrayList<Ruutu> getRuudut() {

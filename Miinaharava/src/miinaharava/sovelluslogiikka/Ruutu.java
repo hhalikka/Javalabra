@@ -14,10 +14,30 @@ import java.util.ArrayList;
  * @author Heidi
  */
 public class Ruutu {
+    /**
+    * Lista niistä muista ruuduista, jotka ympyröivät ruutua.
+    *
+    */
     private ArrayList<Ruutu> ympyroivatRuudut;
+    /**
+    * Tieto siitä, onko ruutu miina.
+    *
+    */
     private boolean onMiina;
+    /**
+    * Tieto siitä, onko ruutu avattu.
+    *
+    */
     private boolean avattu;
+    /**
+    * Ruudun sijainti pelilaudalla.
+    *
+    */
     private Sijainti sijainti;
+    /**
+    * Tieto siitä, onko ruutu merkitty.
+    *
+    */
     private boolean merkitty;
     
     public Ruutu() {

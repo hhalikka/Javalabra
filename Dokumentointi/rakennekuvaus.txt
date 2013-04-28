@@ -1,0 +1,20 @@
+Miinaharava - Rakennekuvaus
+
+Ohjelmassa on kaksi pakkausta; kättöliittymä ja sovelluslogiikka. Sovelluslogiikka sisältää luokat Peli, 
+Pelilauta, Ruutu ja Sijainti. Peli-olio "vahtii" pelin kulkua, siihen on talletettu pelin Pelilauta-olio.
+Peli kertoo, onko peli käynnissä vai loppunut sekä pitää kirjaa sen kulusta. Pelilauta, joka sisältyy 
+Peliin, sisältää pelin kaikki Ruutu-oliot(81 kappaletta). Jokainen Ruutu sisältää tiedon siitä, onko se 
+avattu vai ei, merkitty vai ei, sisältääkö se miinan vai ei. Lisäksi jokainen Ruutu tuntee sitä ympyröivät 
+Ruutu-oliot, jotka ovat sillä listassa. Näinollen Ruutu sisältää myös tiedon siitä, moniko miina sitä ympyröi. 
+Lisäksi jokaisella pelin Ruudulla on oma Sijaintinsa. Sijainti-oliolla on attribuutteina korkeus- ja 
+leveyssijainti, jotka kertovat missä päin pelilaudan 9x9 ruudukkoa tämä sijainti(ja tämän myötä ruutu)
+sijaitsee.
+Käyttöliittymä-pakkaukseen kuuluvat kaikki luokat, jotka käsittelevät pelin graaffisen toteutuksen. Sen 
+luokka Käyttöliittymä toteuttaa suurimman osan graaffisesta osuudesta. Käyttöliittymä tuntee ohjelman Pelin 
+jonka kautta se myös tuntee Pelilaudan, ja voi pitää kirjaa siitä, onko peli käynnissä vai ei, onko voitettu 
+tai hävitty jne. Käyttöliittymään sisältyy joukko(81 kappaletta) Nappi-olioita, joihin kuuluu Ruutu sekä 
+JButton. Tämän avulla käyttöliittymän "painettavat" ruudut yhdistetään pelin sovelluslogiikan niitä vastaaviin 
+Ruutu-olioihin, ja näin tiedetään, onko avattu ruutu miina vai ei ja moniko miina sitä ympyröi. Jokaisella 
+Nappi-oliolla on oma Hiirenkuuntelijansa, joka rekisteröi tiedon siitä, onko ruutua painettu, ja välittää 
+tiedon siitä Käyttöliittymälle. Näin pidetään kirjaa siitä, montako ruutua on avattu, onko painettu miinaa 
+jne ja voidaan lopettaa peli, kun on joko hävitty tai voitettu.

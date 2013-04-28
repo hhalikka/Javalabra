@@ -30,6 +30,7 @@ public class Kayttoliittyma implements Runnable {
     private ArrayList<Nappi> napit;
     private Peli peli;
     private JLabel pelinTila;
+    private JLabel miinojaJaljella;
     private JFrame frame;
     private Pelilauta pelilauta;
     private boolean peliKaynnissa;
@@ -37,8 +38,10 @@ public class Kayttoliittyma implements Runnable {
     public Kayttoliittyma(Peli peli) {
         this.napit=new ArrayList<Nappi>();
         this.pelinTila=new JLabel();
+        this.miinojaJaljella=new JLabel();
         this.pelilauta=peli.getLauta();
         this.peliKaynnissa=true;
+        this.peli=peli;
     }
  /**
  * Metodi luo käyttölittymän komponentit.
@@ -46,12 +49,18 @@ public class Kayttoliittyma implements Runnable {
  */
     public void luodaanKomponentit(Container container) {
         container.setLayout(new BorderLayout());
-        container.add(this.pelinTila, BorderLayout.NORTH);
+        container.add(luoYlapalkki(), BorderLayout.NORTH);
         asetaPelinTilaTeksti();
+        asetaMiinojaJaljellaTeksti();
         container.add(luoRuudut());
         lisataanNapeilleYmpyroivat();
     }
     
+    /**
+    * Lisää käyttöliittymään ruudut, ja luo niitä vastaavat Napit, 
+    * sekä JButtonit.
+    *
+    */
     public JPanel luoRuudut() {
         JPanel panel = new JPanel(new GridLayout(9, 9));
         ArrayList<Ruutu> ruudut = this.pelilauta.getRuudut();
@@ -67,16 +76,47 @@ public class Kayttoliittyma implements Runnable {
         return panel;
     }
     
+    /**
+    * Luo pelin yläpalkin, jossa on tieto siitä onko peli käynnissä, 
+    * sekä jäljellä olevien miinojen määrästä.
+    *
+    */
+    public JPanel luoYlapalkki() {
+        JPanel panel=new JPanel(new BorderLayout());
+        panel.add(this.pelinTila, BorderLayout.NORTH);
+        panel.add(this.miinojaJaljella, BorderLayout.EAST);
+        return panel;
+    }
+    
+    /**
+    * Asettaa tekstin jäljellä olevien miinojen määrästä.
+    *
+    */
+    public void asetaMiinojaJaljellaTeksti() {
+        this.miinojaJaljella.setText("Miinoja Jäljellä: "+this.peli.miinojaJaljella());
+    }
+    /**
+    * Asettaa tekstin joka kertoo onko peli käynnissä, hävitty vai voitettu.
+    *
+    */
     public void asetaPelinTilaTeksti() {
         String tila="";
         if(this.peliKaynnissa) {
             tila+="Peli käynnissä";
+        } else if(this.voitettu()) {
+            tila+="Voitit!";
         } else {
             tila+="Hävisit!";
         }
         this.pelinTila.setText(tila);
     }
-    
+    /**
+    * Lisää jokaiselle käyttöliittymän Nappi-oliolle sen listaan sitä 
+    * ympyröivät napit.
+    * 
+    * @see miinaharava.kayttoliittyma.Nappi
+    *
+    */
     public void lisataanNapeilleYmpyroivat() {
         for(Nappi nappi:this.napit) {
             for(Nappi ympyroivaksiLisattava:this.napit) {
@@ -86,13 +126,32 @@ public class Kayttoliittyma implements Runnable {
             }
         }
     }
-    
+    /**
+    * Lopettaa pelin.
+    *
+    */
     public void lopetaPeli() {
         this.peliKaynnissa=false;
         asetaPelinTilaTeksti();
     }
+    /**
+    * Kertoo onko peli käynnissä.
+    * 
+    * @return true, mikäli peli on käynnissä, false mikäli on voitettu tai 
+    * hävitty.
+    *
+    */
     public boolean peliKaynnissa() {
         return this.peliKaynnissa;
+    }
+    /**
+    * Kertoo onko peli voitettu.
+    * 
+    * @return true, mikäli peli on voitettu.
+    *
+    */
+    public boolean voitettu() {
+        return this.peli.voitettu();
     }
     
     @Override

@@ -10,7 +10,7 @@ import miinaharava.Miinaharava;
 import miinaharava.sovelluslogiikka.Ruutu;
 
 /**
- *
+ * 
  * @author Heidi
  */
 public class Hiirenkuuntelija implements MouseListener {
@@ -27,6 +27,7 @@ public class Hiirenkuuntelija implements MouseListener {
         if(this.kayttoliittyma.peliKaynnissa()){
             if(me.getButton()==MouseEvent.BUTTON3) {
                 merkitse();
+                this.kayttoliittyma.asetaMiinojaJaljellaTeksti();
             } else {
                  if(!this.nappi.getRuutu().merkitty()&&!this.nappi.getRuutu().avattu()) {
                     avaaRuutu();  
@@ -41,7 +42,10 @@ public class Hiirenkuuntelija implements MouseListener {
         this.nappi.avaaRuutu();
         if(this.nappi.onkoRuutuMiina()) {
             this.kayttoliittyma.lopetaPeli();
-        }}
+        } else if(this.kayttoliittyma.voitettu()) {
+            this.kayttoliittyma.lopetaPeli();
+        }
+    }
  /**
  * Metodi merkitsee ruudun.
  *
