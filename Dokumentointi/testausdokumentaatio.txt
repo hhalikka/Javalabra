@@ -1,0 +1,10 @@
+Miinaharava - Testausdokumentaatio
+
+Ohjelmasta testasin suurimman osan JUnit-testien avulla, mutta käyttöliittymän toiminta sekä muun toiminnallisuuden 
+oikeellisuuden "varmistuksen" tein ns. käsin, eli pelasin pelin läpi yli kymmenen kertaa(voittoon), hävisin monta 
+kertaa tahallani ja tutkin käyttöliittymän toimintaa tarkasti ohjelman suorituksen aikana. Esimerkiksi varmistin, 
+ettei miinoja ole liikaa ruutujen ympärillä, varmistin ettei peliä voi jatkaa kun on voitettu/hävitty ja ettei 
+merkittyä ruutua voi avata, avattua voi sulkea tai merkitä jne. Tällä tavoin huomasin esimerkiksi ongelman, että 
+avatun ruudun voi merkitä, ja sain näin korjattua asian. Varmistin myös että pelin tekstit (ilmoitus siitä 
+onko peli käynnissä, voitettu vai hävitty, sekä tieto jäljelläolevien miinojen määrästä) päivittyvät kokoajan 
+ja oikealla hetkellä. Näin varmistin, että käyttöliittymä toimii oikein.

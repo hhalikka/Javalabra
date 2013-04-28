@@ -56,3 +56,14 @@ n 2t : muutoksia koodiin ja testeihin, koodin kirjoitusta, virheiden korjailua
 
 ke 24.4
 n 2t : pieniä muutoksia ohjelmaan, koodausta, käyttöliittymän viimeistelyä
+
+to 25.4
+n 1t : dokumentointia(luokkakaavio, käyttöohje, rakennekuvaus)
+n 1t : ohjelmointia, käyttöliittymän "testausta" käsin
+
+pe 26.4
+n 1t : dokumentoinnin viimeistelyä (sekvenssikaavio, rakennekuvaus, käyttöohje)
+n 2t : koodin viimeistelyä, muutoksia ohjelmaan, javadoc
+
+la 27.4
+n 1t : kaiken viimeistelyä, testausdokumentaation kirjoitus
