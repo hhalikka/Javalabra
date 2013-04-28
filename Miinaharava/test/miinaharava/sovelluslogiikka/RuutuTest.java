@@ -57,6 +57,12 @@ public class RuutuTest {
         assertEquals(ruutu.avattu(), false);
     }
     @Test
+    public void ruutuAvautuu() {
+        Ruutu ruutu = new Ruutu();
+        ruutu.avaa();
+        assertEquals(ruutu.avattu(), true);
+    }
+    @Test
     public void avattuaRuutuaEiVoiSulkea() {
         Ruutu ruutu = new Ruutu();
         ruutu.avaa();

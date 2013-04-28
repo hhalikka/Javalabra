@@ -71,7 +71,7 @@ public class Ruutu {
         if(!this.onMiina&&!this.merkitty&&!this.avattu) {
             this.avattu=true;
         } else {
-            //merkitty, ei tehdä mitään
+            //ei käsitellä tässä
         }
     }
     /**
